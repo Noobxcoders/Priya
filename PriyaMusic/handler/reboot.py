@@ -27,7 +27,7 @@ async def reboot(client, msg):
         try:
             await client.ban_chat_member(chat_id =msg.chat.id,user_id=i.user.id)
             print("kicked {} from {}".format(i.user.id,msg.chat.id))
-            await message.delete()
+            await msg.delete()
         except FloodWait as e:
             await asyncio.sleep(e.x)
             print(e)
